@@ -1,0 +1,7 @@
+.mycssclass{
+    max-height: 200 px;
+    width:auto!important;
+    object-fit: contain!important;
+    margin: 20px;
+
+}

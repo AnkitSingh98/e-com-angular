@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <!-- One row has 12 grids -->
+
+    <!-- md means medium screen breakpoint, 6 means 6 grids ie it will take 6 grids on medium and large screen...
+           but will take 12 grids on small screen. Therefore, it is mobile responsive
+               offset-md-3 will shift it to right by 3 grids-->
+    <div class="col-md-6 offset-md-3">
+        <!-- mt means margin top, shadow-lg means shadow large-->
+      <div class="card mt-5 border border-0 shadow">
+        <div class="card-body">
+          <h3 class="my-3">Login here</h3>
+
+          <form action="" (ngSubmit)="submitLoginRequest($event)">
+
+
+            <!-- email field  -->
+
+
+            <!-- mb means margin bottom -->
+            <div class="mb-3">
+              <label for="username" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control rounded"
+                name="uname"
+                id="username"
+                [(ngModel)]="loginData.username"
+                aria-describedby="emailHelp"
+                placeholder="Enter your username"
+              />
+
+            </div>
+
+
+
+            <!-- password  field  -->
+
+
+            <div class="mb-3">
+                <label for="password" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control rounded"
+                  name="password"
+                  id="password"
+                  [(ngModel)]="loginData.password"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter your password"
+                />
+
+              </div>
+
+              <div class="container text-center">
+                <button type="submit" class="btn btn-primary rounded-0">Login</button>
+
+                <!--  ms means margin start -->
+                <button type="reset" class="btn btn-warning rounded-0 ms-2" >Reset</button>
+              </div>
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

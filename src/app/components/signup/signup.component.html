@@ -1,0 +1,106 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <!-- Main content area -->
+            <div class="card border-0 mt-5 mb-2 shadow">
+                <div class="card-body">
+                    <h3>Signup here</h3>
+                    <div class="card-title">Fill the correct details</div>
+
+                    <form action=""  (ngSubmit)="submitForm($event)" novalidate>
+
+                        <!--   name field   -->
+
+
+                        <div class="mb-2 mt-4">
+                            
+                            <!-- for attribute of label:  give here the id of that field over which you want to give label -->
+                            <label for="name">Your name</label>
+
+                            <!--  name: name of the field... it is used to get data 
+                                     id: unique id of the field
+
+                                        [value]="user.name": One way Property Binding.. Here, user.name is variable of typescript file
+                                         [(ngModel)]="user.name": Two way property binding
+
+                                            form-control: class of bootstrap used to give design to form
+                                                placeholder: default text to display in field
+                                                -->
+                            <input type="text" name="name" id="name" [(ngModel)]="user.name" class="form-control rounded" [ngClass]=" status.errorMessage.name ? 'is-invalid' : ''" placeholder="Enter here" required/>
+                            <div  class="invalid-feedback">
+                                {{  status.errorMessage.name }}
+                            </div>
+                        </div>
+
+
+                        <!--   email field   -->
+                        <div class="mb-2 mt-2">
+                            <label for="email">Your email</label>
+                            <input type="email" name="email" id="email" [(ngModel)]="user.email" class="form-control rounded" [ngClass]=" status.errorMessage.email ? 'is-invalid' : '' "  placeholder="Enter here"  required/>
+                            <div  class="invalid-feedback">
+                                {{  status.errorMessage.email }}
+                            </div>
+                        </div>
+
+
+                        <!--   password field   -->
+                        <div class="mb-2 mt-2">
+                            <label for="password">Your password</label>
+                            <input type="password" name="password" id="password" [(ngModel)]="user.password" class="form-control rounded" placeholder="Enter here"  required>
+                        </div>
+
+
+                        <!--   about field   -->
+                        <div class="mb-2 mt-2">
+                            <label for="about">Something about yourself</label>
+                           <textarea style="height: 100px;" name="about" id="about" [(ngModel)]="user.about" class="form-control rounded"></textarea>
+                        </div>
+
+
+                        <!--   address field   -->
+                        <div class="mb-2 mt-2">
+                            <label for="address">Your address</label>
+                           <textarea style="height: 50px;" name="address" id="address" [(ngModel)]="user.address" class="form-control rounded"></textarea>
+                        </div>
+
+
+                        <!--  gender  field  -->
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="gender" id="male" [(ngModel)]="user.gender" value="male" class="form-check-input"> 
+                            <label for="male" class="form-check-label">Male</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="gender" id="female" [(ngModel)]="user.gender" value="female" class="form-check-input" ms-4> 
+                            <label for="female" class="form-check-label">Female</label>
+                        </div>
+
+
+
+                        <!--   phone field   -->
+                        <div class="mb-2 mt-2">
+                            <label for="phone">Your Phone number</label>
+                            <input type="number" name="phone" id="phone" [(ngModel)]="user.phone" class="form-control rounded" placeholder="Enter here"  required>
+                        </div>
+
+
+
+                        <!--  Buttons..... We are using div here to align the buttons to center -->
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="reset" class="btn btn-danger ms-2">Reset Data</button>
+                        </div>
+
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{{user|json}}
+
